@@ -1,0 +1,68 @@
+{
+  "slug": "_scaffold",
+  "tasks": [
+    {
+      "id": "S1",
+      "title": "Create the TypeScript/Vite shell and feature-first clean architecture foundation",
+      "layer": "scaffold",
+      "deps": [],
+      "acs": [],
+      "dod": "Select mutually compatible stable versions of the approved tools and supported Node LTS; pin the runtime/dependencies and commit the npm lockfile. npm ci, npm run typecheck and npm run build succeed; npm run preview serves a bootable starter shell. Bootstrap constructs dependencies; domain/application imports cannot reach Firebase/DOM/browser adapters. Establish real initial modules with minimal code, not empty future habits or full breathing functionality. Preserve prototype-glass/. This is the first part of the skeleton smoke anchor: build and boot; complete test/data-tooling checks in S2/S3.",
+      "files_hint": ["package.json", "package-lock.json", ".nvmrc", "tsconfig.json", "vite.config.ts", "index.html", "src/app/bootstrap.ts", "src/features/", "src/shared/styles/", "src/shared/i18n/"]
+    },
+    {
+      "id": "S2",
+      "title": "Wire the test/lint harness and Workbox offline starter shell",
+      "layer": "scaffold",
+      "deps": ["S1"],
+      "acs": [],
+      "dod": "npm run test:unit executes a real baseline Vitest test; npm run test:browser executes a starter-shell Playwright smoke test on Chromium and WebKit; npm run lint and npm run typecheck pass. ESLint restrictions detect a deliberate forbidden inner-layer or cross-feature internal import in a temporary negative verification, then the offending fixture is removed. Workbox is built through Vite with explicit configuration; manifest, icons, offline shell and a small test audio asset are cached. Browser tests verify cold offline reopen after initial loading and update deferral while a simulated practice-activity interface is starting/running/paused, including multiple clients. Do not implement a full breathing engine just for this check. npm run build and boot stay green; full data-tooling anchor follows S3. Do not force reload or unconditional skipWaiting during practice.",
+      "files_hint": ["package.json", "vitest.config.ts", "playwright.config.ts", "eslint.config.js", "src/app/bootstrap.test.ts", "src/pwa/", "public/manifest.webmanifest", "public/icons/", "public/audio/", "tests/browser/"]
+    },
+    {
+      "id": "S3",
+      "title": "Configure Firebase emulators, ownership rules and reversible test data evolution",
+      "layer": "scaffold",
+      "deps": ["S1", "S2"],
+      "acs": [],
+      "dod": "Create Auth/Firestore Emulator configuration and npm run test:firebase using firebase emulators:exec with the required Java/CLI prerequisites documented. Test fixtures demonstrate schemaVersion and stable client-generated session IDs reused on retry; deny unauthenticated writes, reject ownership reassignment and deny cross-account reads/writes. All tests use emulators and disposable fixtures, never real records; demonstrate fixture setup and cleanup/reset in a fresh emulator. Generic SQL apply/revert migration is explicitly N/A because Firestore has no SQL schema migration tool: version-controlled rules/indexes plus reversible emulator fixture validation replace that scaffold subcheck. No guest database, guest import, anonymous cloud account, second session store or final product schema is created. Build + boot + baseline unit/browser suites + emulator/data-tooling validation constitute the full green skeleton smoke anchor.",
+      "files_hint": ["firebase.json", "firestore.rules", "firestore.indexes.json", "src/shared/firebase/", "src/features/sessions/application/", "src/features/sessions/infrastructure/", "tests/firebase/", "package.json"]
+    },
+    {
+      "id": "S4",
+      "title": "Add GitHub checks, PR previews and gated automatic production deployment",
+      "layer": "scaffold",
+      "deps": ["S2", "S3"],
+      "acs": [],
+      "dod": "Create workflows on standard Linux runners for npm ci, lint, typecheck, unit tests, emulator tests, browser smoke and build. Discover the actual repository and production branch rather than assuming a name. Trusted PRs receive Firebase Hosting previews connected to a test Firebase backend; untrusted PRs receive checks without deployment secrets. An approved PR merge triggers production release only after required checks pass. Pin third-party actions and scope deployment permissions; identify required repository settings/credentials and prove unavailable secrets fail closed without deploying. Hosting deployment alone does not deploy Firestore rules/indexes: include an explicit tested release step or documented blocked prerequisite so app/rules compatibility cannot be silently ignored. Validate workflow syntax and command alignment; build + boot + test + emulator smoke anchor remains green. No paid tier is required or enabled.",
+      "files_hint": [".github/workflows/", "firebase.json", ".firebaserc", "docs/operations/releases.md"]
+    },
+    {
+      "id": "S5",
+      "title": "Document development conventions and repeatable PWA installation/release procedures",
+      "layer": "scaffold",
+      "deps": ["S3", "S4"],
+      "acs": [],
+      "dod": "Write CLAUDE.md and setup/install/release documentation matching the architecture map, preserving any existing authored instructions if present. Document Node/npm/Java/CLI requirements, npm scripts, emulator-only tests, Firebase setup, Google sign-in prerequisites, feature/layer import rules, test versus production configuration and no administrator secrets in browser code. Explain iPhone/Android browser installation with icons, first online cache loading, offline reopening, between-practice updates, safe rollback and how to repeat builds. State Spark quota behavior, no Apple Developer membership requirement for PWA installation, and no automatic paid upgrade. List physical-device checks and evidence fields. Run documented build + boot + baseline suites + emulator fixture reset rather than claiming the instructions work from inspection alone.",
+      "files_hint": ["CLAUDE.md", "README.md", ".env.example", "docs/operations/setup.md", "docs/operations/install.md", "docs/operations/releases.md"]
+    },
+    {
+      "id": "S6",
+      "title": "Configure the free Firebase environments and verify the hosted starter release path",
+      "layer": "scaffold",
+      "deps": ["S4", "S5"],
+      "acs": [],
+      "dod": "Resolve owner-supplied Firebase/GitHub access, actual project IDs, chosen Firestore region, Google provider/authorized-domain configuration, deploy credentials and repository approval settings. Keep production and test backend resources separated using the two free projects if the account permits; surface availability/quota blockers rather than silently sharing real data or enabling billing. Use only Spark services and provided domains. Provision/configure/deploy only under the future scaffold session's applicable authorization; survey has deployed nothing. Verify a trusted PR preview points to the test backend and an approved merge releases the starter to production with checks green. Record URLs, release revision and smoke results without credentials. Live functional Google login and session features may remain feature tasks, but prerequisites must be explicit. Full local smoke anchor stays green and hosted starter boots over HTTPS.",
+      "files_hint": [".firebaserc", "firebase.json", ".github/workflows/", "docs/operations/setup.md", "docs/operations/releases.md", "docs/features/_scaffold/verification.md"]
+    },
+    {
+      "id": "S7",
+      "title": "Install and open the starter PWA on the actual iPhone and Android phones",
+      "layer": "scaffold",
+      "deps": ["S6"],
+      "acs": [],
+      "dod": "Obtain model/OS/browser versions and access to the real iPhone and Android devices; record date, hosted revision, install steps, home-screen icon, standalone launch, online boot and cold offline shell reopen after caching on each phone. Exercise repeat install/update instructions and the starter audio fixture if available, distinguishing this from acceptance of final guidance audio. Record owner/device evidence honestly; desktop WebKit or screenshots of a desktop preview do not count as physical-phone installation. A missing device, blocked website, unavailable browser permission or failed installation leaves this task incomplete with the exact blocker. No Apple signing account or native build is part of this PWA plan. Before accepting scaffold, the build + boot + baseline automated suites + emulator data-tooling smoke anchor and both physical-device installation checks must pass. Full breathing/audio/account/sync runtime acceptance remains feature work.",
+      "files_hint": ["docs/features/_scaffold/verification.md", "docs/operations/install.md"]
+    }
+  ]
+}
